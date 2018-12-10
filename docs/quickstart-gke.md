@@ -28,7 +28,7 @@ In this section, you will deploy a Google Kubernetes Engine (GKE) cluster using 
   export GCLOUD_DNS_ZONE="my-domain.com"
   export GCLOUD_AUTHZ_DOMAIN="my-domain.com"
   export GCLOUD_K8S_CLUSTER="my-gke-cluster"
-  export GCLOUD_K8S_VERSION="1.10"
+  export GCLOUD_K8S_VERSION="1.10.7-gke.11"
   ```
 
   - `GCLOUD_USER` specifies the email address used to authenticate to Google Cloud Platform.
@@ -96,7 +96,7 @@ Specify the displayed OAuth client id and secret in the `GCLOUD_OAUTH_CLIENT_KEY
     --project ${GCLOUD_PROJECT} \
     --num-nodes 3 \
     --machine-type n1-standard-2 \
-    --zone ${GCLOUD_REGION} \
+    --subnetwork default --region ${GCLOUD_REGION} \
     --cluster-version ${GCLOUD_K8S_VERSION}
   ```
 
